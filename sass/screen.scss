@@ -1,0 +1,48 @@
+@import "compass";
+@import "susy";
+
+// My Variables:
+$column-width   : 40px;
+$gutter-width   : 10px;
+$grid-padding   : 0;
+
+$break-1        : 6; // for 320px ( 290px  )
+$break-2        : 8; // for 480px ( 440px  )
+$break-3        : 14; // for 800px ( 690px  )
+$break-4        : 20; // for 1024px ( 990px )
+$break-5        : 24; // for 1280px ( 1190px )
+$break-6        : 30; // for 1600px ( 1490px )
+
+@import "partials/_custom-reset";
+@import "partials/_properties";
+@import "partials/_mixins";
+@import "partials/_animations";
+@import "partials/_sections";
+@import "partials/_about";
+@import "partials/_other-about-us";
+@import "partials/_contact";
+@import "partials/_form";
+@import "partials/_location";
+@import "partials/_fat-footer";
+@import "partials/_page-footer";
+@import "partials/_top-container";
+@import "partials/_goto-top";
+@import "partials/_our-consultants";
+@import "partials/_contact-form";
+@import "partials/_other-contact-methods";
+@import "partials/_partners";
+@import "partials/_footer-links";
+@import "partials/_infobox";
+
+html{
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+    font-family: $default-font-family;
+    color: lighten($dark, 15%);
+}
+#page{
+    color: $white;
+    &.tiny-top-container{
+        margin-top: 80px;
+    }
+}

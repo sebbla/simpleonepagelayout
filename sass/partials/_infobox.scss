@@ -1,0 +1,67 @@
+#infobox {
+    @include background($blue);
+    @include opacity(0);
+    @include animation(slide-in-up $default-animation-delay $outer-animation-duration forwards);
+    @include animation-play-state(paused);
+    overflow: visible;
+    margin-top: 8px;
+    color: $white;
+    padding: 0;
+    position: relative;
+    span.arrow{
+        @include transform(rotate(45deg));
+        @include background($dark);
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+    }
+    header{
+        @include background($dark);
+        z-index: 2;
+        position: relative;
+        h3{
+            padding: 5px 15px;
+            font-size: 1.8rem;
+            color: $white;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+    img{
+        max-width: 100%;
+    }
+    div{
+        padding: 15px 15px;
+        font-size:1.4rem;
+        div{
+            margin: 0 auto;
+            width: 155px;
+            font-size: 1.3rem;
+            b{ 
+                min-width: 75px;
+                display: inline-block;
+            }
+        }
+    }
+    &.animate{ @include animation-play-state(running); }
+
+    @include at-breakpoint($break-1){ 
+        $infobox-width: 290px; 
+        $arrow-width: 10px;
+        width: $infobox-width;
+        left: 50%;
+        margin-left: - $infobox-width / 2;
+        span.arrow{
+            padding: $arrow-width / 2;
+            top: - $arrow-width / 2;
+            left: $infobox-width / 2;
+            margin-left: - $arrow-width / 2;
+        }
+    }
+    @include at-breakpoint($break-2){ }
+    @include at-breakpoint($break-3){ }
+    @include at-breakpoint($break-4){ }  
+    @include at-breakpoint($break-5){ }
+    @include at-breakpoint($break-6){ }
+
+}

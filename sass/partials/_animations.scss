@@ -1,0 +1,36 @@
+@include keyframes(slide-in-up){
+    0% {
+        @include perspective(400px);
+        @include transform(translateY($bottom-offset));
+        @include opacity(1);
+    }
+    100% {
+        @include perspective(400px);
+        @include transform(translateY(0));
+        @include opacity(1);
+    }   
+}
+@include keyframes(slide-in-left){
+    0% {
+        @include perspective(400px);
+        @include transform(translateX($left-offset));
+        @include opacity(0);
+    }
+    100% {
+        @include perspective(400px);
+        @include transform(translateX(0));
+        @include opacity(1);
+    }   
+}
+@include keyframes(slide-in-right){
+    0% {
+        @include perspective(400px);
+        @include transform(translateX($right-offset));
+        @include opacity(0.5);
+    }
+    100% {
+        @include perspective(400px);
+        @include transform(translateX(0));
+        @include opacity(1);
+    }   
+}

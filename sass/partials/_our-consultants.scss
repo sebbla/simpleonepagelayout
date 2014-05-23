@@ -1,0 +1,104 @@
+section.consultants{
+    margin: 20px 0 35px 0;
+    overflow: visible;
+    > header{
+        margin-bottom: 35px;
+        text-align: center;
+        h3{ font-size: 2.2rem; }
+    }
+    div{
+        article{
+            @include background($blue);
+            @include opacity(0);
+            margin-bottom: 20px;
+            header{
+                @include background($white);
+                h4{
+                    text-align: center;
+                    color: darken($red,20%);
+                    font-size: 1.6rem;
+                    font-weight: 300;
+                }
+            }
+            figure{
+                img{
+                    max-width: 100%;
+                    display: block;
+                }
+            }
+            p{
+                clear: both;
+                color: $white;
+                font-size: 1.3rem;
+                padding: 30px 20px 30px 20px;
+                display: block;
+                text-align: center;
+                b{
+                    display: inline-block;
+                    margin-right: 10px;
+                    min-width: 75px;
+                }
+            }
+            &:nth-child(2n){ 
+                @include background($orange);
+                @include background($dark);
+                @include omega;
+            }
+            &:last-child{ margin-bottom: 0; }
+            &:nth-child(1){ @include animation(slide-in-left $default-animation-delay $outer-animation-duration forwards); }
+            &:nth-child(2){ @include animation(slide-in-right $default-animation-delay $outer-animation-duration forwards); }
+            &:nth-child(2), &:nth-child(1){ @include animation-play-state(paused); }
+            &.animate:nth-child(2), &.animate:nth-child(1){ @include animation-play-state(running); }
+        }
+    }
+
+    @include at-breakpoint($break-1){ 
+        @include span-columns(6 omega, $break-1); 
+        div article{ 
+            @include span-columns(6 omega, $break-1); 
+            figure{ @include span-columns(3, $break-1); }
+        }
+    }
+    @include at-breakpoint($break-2){ 
+        @include span-columns(8 omega, $break-2); 
+        div article{ 
+            @include span-columns(8 omega, $break-2); 
+            figure{ @include span-columns(3, $break-2); }
+            &:nth-child(even) figure { @include omega; }
+        }
+    }
+    @include at-breakpoint($break-3){ 
+        @include span-columns(14 omega, $break-3); 
+        div article{ @include span-columns(7, $break-3); }
+    }
+    @include at-breakpoint($break-4){ 
+        @include span-columns(20 omega, $break-4); 
+        div article{
+            p{
+                clear: none; 
+                padding: 20px 20px;
+            }
+            figure{ @include span-columns(9, $break-4); }
+        }
+    }
+    @include at-breakpoint($break-5){ 
+        @include span-columns(24 omega, $break-5); 
+        div article { 
+            @include span-columns(12, $break-5); 
+            p{ padding: 10px 20px; }
+            figure{ @include span-columns(9, $break-5); }
+            &:nth-child(even) { 
+                @include omega;
+                figure { @include omega; }
+            }
+        }
+    }
+    @include at-breakpoint($break-6){ 
+        @include span-columns(30 omega, $break-6); 
+        div article { 
+            @include span-columns(15, $break-6); 
+            figure{ @include span-columns(8, $break-6); }
+        }
+    }
+
+}

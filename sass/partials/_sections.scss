@@ -1,0 +1,24 @@
+section{
+    overflow: hidden;
+    clear: both;
+    padding:  35px 0 35px 0;
+    header{
+        padding: 10px 0;
+        h2{
+            font-size: 3.8rem;
+            text-align: center;
+            font-weight: 300;
+        }
+    }
+    .inner{
+        @include container ($total-columns, $break-1, $break-2, $break-3, $break-4, $break-5, $break-6);
+
+        @include at-breakpoint($break-1){  }
+        @include at-breakpoint($break-2){  }
+        @include at-breakpoint($break-3){  }
+        @include at-breakpoint($break-4){  }
+        @include at-breakpoint($break-5){  }
+        @include at-breakpoint($break-6){  }
+
+    }
+}

@@ -1,0 +1,45 @@
+section.footer-links{
+    clear: none;
+    div.content{
+        @include clearfix;
+        padding: 35px 10px;
+        font-size: 1.3rem;
+        figure{
+            img{
+                max-width: 100%;
+            }
+        }
+    }    
+
+    @include at-breakpoint($break-1){ 
+        @include span-columns(6 omega, $break-1); 
+        figure{ @include span-columns(6 omega, $break-1);  }
+        ul{ @include span-columns(6 omega, $break-1); margin-top: 15px; }
+    }
+    @include at-breakpoint($break-2){ 
+        @include span-columns(8 omega, $break-2);
+        figure{ @include span-columns(3, $break-2);  }
+        ul{ @include span-columns(5 omega, $break-2); margin-top: 0 }
+    }
+    @include at-breakpoint($break-3){
+        @include span-columns(7, $break-3); 
+        figure{ @include span-columns(5, $break-3);  }
+        ul{ @include span-columns(9 omega, $break-3); }
+    }
+    @include at-breakpoint($break-4){ 
+        figure{ @include span-columns(6, $break-4);  }
+        ul{ @include span-columns(13 omega, $break-4); }
+        @include span-columns(10, $break-4); 
+    }  
+    @include at-breakpoint($break-5){
+        figure{ @include span-columns(7, $break-5);  }
+        ul{ @include span-columns(16 omega, $break-5); }
+        @include span-columns(8, $break-5); 
+    }
+    @include at-breakpoint($break-6){
+        @include span-columns(9, $break-6);
+        figure{ @include span-columns(10, $break-6);  }
+        ul{ @include span-columns(19 omega, $break-6); }
+    }
+
+}

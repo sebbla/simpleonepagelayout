@@ -1,0 +1,13 @@
+section#location{
+    @include background(lighten($dark,75%));
+    @include clearfix;
+    padding-bottom: 0;
+    > header{
+        padding: 10px 0 40px 0;
+        h2{ color: $blue; }
+    }
+    #location-map{
+        @include span-columns(24 omega, $break-5);
+        min-height: 700px;
+    }
+}

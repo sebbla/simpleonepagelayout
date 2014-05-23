@@ -1,0 +1,70 @@
+section#other-about-us{
+    @include background($blue);
+    > .inner{
+        padding: 30px 0 50px 0;
+        article.client{
+            @include background($white);
+            @include span-columns(6, $break-5);
+            @include opacity(0);            
+            margin-bottom:15px;
+            color: $dark;
+            header{ 
+                margin-top: -25px;
+                text-align: center;
+                h3{ 
+                    @include background(#fff);
+                    padding: 5px 20px;
+                    color: darken($red,20%);
+                    display: inline-block;
+                }
+            }
+            div{ 
+                padding: 15px;
+                blockquote{
+                    font-size: 1.4rem;
+                    padding: 0;
+                    margin: 0;
+                    font-style: italic;
+                    color: $dark;
+                    font-weight: 300;
+                    span{ display: inline-block; }
+                    span.open{ padding: 0 5px 0 15px; }
+                    span.closed{ padding: 0 15px 0 5px; }
+                }
+            }
+            img{ max-width: 100%; }   
+            &.animate{ @include animation-play-state(running); }
+            &:nth-child(4n){ @include omega; }            
+            &:nth-child(4n-3){ @include animation(slide-in-left $default-animation-delay $outer-animation-duration forwards); }
+            &:nth-child(4n-2){ @include animation(slide-in-left $default-animation-delay $inner-animation-duration forwards); }
+            &:nth-child(4n-1){ @include animation(slide-in-right $default-animation-delay $inner-animation-duration forwards); }
+            &:nth-child(4n){ @include animation(slide-in-right $default-animation-delay $outer-animation-duration forwards); }
+            &:nth-child(4n), &:nth-child(4n-3),&:nth-child(4n-2),&:nth-child(4n-1){ 
+                @include animation-play-state(paused);
+            }
+            &.animate:nth-child(4n), &.animate:nth-child(4n-3),&.animate:nth-child(4n-2),&.animate:nth-child(4n-1){ 
+                @include animation-play-state(running);
+            }
+        }
+    }
+
+
+    @include at-breakpoint($break-1){ > .inner article.client{ @include span-columns(6 omega, $break-1); } }
+    @include at-breakpoint($break-2){ > .inner article.client{ @include span-columns(8 omega, $break-2); } }
+    @include at-breakpoint($break-3){
+        > .inner article.client{ 
+            @include span-columns(7, $break-3); 
+            &:nth-child(even){ @include omega; }
+        }
+    }
+    @include at-breakpoint($break-4){
+        > .inner article.client{ 
+            @include span-columns(5, $break-4); 
+            &:nth-child(even){ @include remove-omega; }
+            &:nth-child(4n){ @include omega; }
+        }
+    }
+    @include at-breakpoint($break-5){ }
+    @include at-breakpoint($break-6){ }
+
+}

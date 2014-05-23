@@ -1,0 +1,55 @@
+section#partners{
+    clear: none;
+    div{ 
+        figure{
+            img{ max-width: 100%; }
+            &:nth-child(2n){ @include omega; }
+        }
+    }
+
+    @include at-breakpoint($break-1){ 
+        @include span-columns(6 omega, $break-1);
+        div figure { @include span-columns(3, $break-1); }
+    }
+    @include at-breakpoint($break-2){ 
+        @include span-columns(8 omega, $break-2);
+        div figure { @include span-columns(4, $break-2) }
+    }
+    @include at-breakpoint($break-3){ 
+        @include span-columns(14 omega, $break-3);
+        div figure {
+            @include span-columns(3, $break-3);
+            &:nth-child(2n){ @include remove-omega; }
+            &:nth-child(1) { @include span-columns(4, $break-3); }
+            &:nth-child(4) { @include span-columns(4 omega, $break-3); }
+        }
+    }
+    @include at-breakpoint($break-4){ 
+        @include span-columns(10, $break-4);
+        div figure {
+            @include span-columns(5, $break-4);
+            &:nth-child(2n){ @include remove-omega; }
+            &:nth-child(1) { @include span-columns(5, $break-4); }
+            &:nth-child(4) { @include span-columns(5 omega, $break-4); }
+        }
+    }
+    @include at-breakpoint($break-5){ 
+        @include span-columns(8, $break-5);
+        div figure {
+            @include span-columns(12, $break-5);
+            &:nth-child(2n){ @include omega; }
+            &:nth-child(1) { @include span-columns(12, $break-5); }
+            &:nth-child(4) { @include span-columns(12 omega, $break-5); }
+        }
+    }
+    @include at-breakpoint($break-6){ 
+        @include span-columns(12, $break-6);
+        div figure {
+            @include span-columns(15, $break-6);
+            &:nth-child(2n){ @include omega; }
+            &:nth-child(1) { @include span-columns(15, $break-6); }
+            &:nth-child(4) { @include span-columns(15 omega, $break-6); }
+        }
+    }
+
+}

@@ -1,0 +1,5 @@
+footer#page-footer{
+    @include background(darken($dark,20%));
+    padding: 10px 0;
+    text-align: center;
+}

@@ -1,0 +1,100 @@
+section.other-contact-methods{
+    @include box-sizing(border-box);
+    @include opacity(0);
+    @include animation(slide-in-right $default-animation-delay $outer-animation-duration forwards);
+    @include animation-play-state(paused);
+    clear: none;
+    margin-top: 25px;
+    padding: 0;
+    > section{
+        clear: none;
+        padding: 0;
+        margin-bottom: 10px;
+        figure{ 
+            @include background(lighten($dark,70%));
+            height: 105px;
+            @include float-left;
+            img{ 
+                margin: 30px auto 0 auto; 
+                max-width: 75px; 
+                max-width: 50px; 
+                display: block; 
+            }
+        }
+        header{ 
+            h4{
+                text-align: right;
+                font-size: 1.4rem;
+                font-weight: 700;
+            }
+        }
+        p,div{
+            @include box-sizing(border-box);
+            font-size: 2.2rem;
+            font-size: 1.4rem;
+            padding: 0 10px;
+            font-weight: 300;
+            text-align: center;
+        }
+        &:nth-child(1){ @include background($blue); -figure { @include background($orange) } }
+        &:nth-child(2){ @include background($orange); -figure { @include background($dark) } }
+        &:nth-child(3){ @include background($dark); -figure { @include background($green) } }
+        &:nth-child(4){ @include background(darken($green,0%)); -figure { @include background($blue) } }
+    }
+    &.animate{ @include animation-play-state(running); }
+
+    @include at-breakpoint($break-1){
+        @include span-columns(6 omega, $break-1); 
+        section{ 
+            @include span-columns(6 omega, $break-1); 
+            figure{ @include span-columns(2, $break-1); }
+            div{ @include span-columns(4 omega, $break-1); }
+        }
+    }
+    @include at-breakpoint($break-2){ 
+        @include span-columns(8 omega, $break-2);
+        section{ 
+            @include span-columns(8 omega, $break-2); 
+            figure{ @include span-columns(3, $break-2); }
+            div{ @include span-columns(5 omega, $break-2); }
+        }
+    }
+    @include at-breakpoint($break-3){ 
+        @include span-columns(14 omega, $break-3); 
+        section{ 
+            @include span-columns(7, $break-3); 
+            figure{ @include span-columns(4, $break-3); }
+            div{ @include span-columns(10 omega, $break-3); }
+            &:nth-child(even){ @include omega; }
+        }
+    }
+    @include at-breakpoint($break-4){
+        @include span-columns(10 omega, $break-4); 
+        section{ 
+            @include span-columns(20 omega, $break-4); 
+            figure{ @include span-columns(4, $break-4); }
+            div{ 
+                @include span-columns(16 omega, $break-4); 
+                font-size: 2.2rem;
+            }
+        }
+    }
+    @include at-breakpoint($break-5){ 
+        @include span-columns(12 omega, $break-5); 
+        section{ 
+            @include span-columns(24 omega, $break-5); 
+            figure{ @include span-columns(4, $break-5); }
+            div{ @include span-columns(20 omega, $break-5); }
+        }
+
+    }
+    @include at-breakpoint($break-6){ 
+        @include span-columns(15 omega, $break-6); 
+        section{ 
+            @include span-columns(30 omega, $break-6); 
+            figure{ @include span-columns(4, $break-6); }
+            div{ @include span-columns(26 omega, $break-6); }
+        }
+    }
+
+}

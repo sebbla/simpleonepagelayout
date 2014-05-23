@@ -1,0 +1,118 @@
+#top-container{
+    @include background(lighten($dark, 75%));
+    height: 80px;
+    z-index: 2;
+    &.tiny{
+        position: fixed;
+        width: 100%;
+        height: 36px;
+        top: 0;
+        > .inner{
+            padding: 0;
+            header,  .social-container{ display: none; }
+            nav{
+                margin-top: 0;
+                @include transition-duration(2s);
+            }
+        }
+    }
+    > .inner{
+        padding: 8px 0 0 0;
+        div.social-container{ 
+            @include span-columns(4 omega, $break-5);
+            ul{
+                list-style-type: none;
+                li{
+                    @include float-right;
+                    margin-left: 2px;
+                    width: 32px;
+                    img{
+                        @include background($white);
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        nav{
+            @include span-columns(24 omega, $break-5);
+            list-style-type: none;
+            margin-top: 15px;
+            > a, li a{
+                color: $white;
+                display: block;  
+                padding: 9px 15px;
+                font-size: 1.3rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                text-align: center;
+            }
+            > a{ @include background(lighten($dark, 5%)); }
+            li{
+                list-style-type: none;
+                text-align: center;
+                display: none;
+                &:nth-child(1){ @include background($blue); }
+                &:nth-child(2){ @include background($orange); }
+                &:nth-child(3){ @include background($dark); }
+                &:nth-child(4){ @include background($green); }
+            }
+        }
+
+        header{
+            @include span-columns(7, $break-5);
+            h1{
+                a{ 
+                    font-size: 1.8rem;
+                    color: $orange;
+                    font-weight: 300;
+                    span{
+                        &:first-child{
+                            @include background($blue);
+                            font-size: 1.8rem;
+                            color: $white;
+                            display: inline-block;
+                            padding: 0 5px;
+                            font-weight: 400;
+                        }
+                        &:last-child{
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include container ($total-columns, $break-1, $break-2, $break-3, $break-4, $break-5, $break-6);
+        @include at-breakpoint($break-1){ 
+            header, div.social-container{ @include span-columns(6 omega, $break-1); }
+        }
+        @include at-breakpoint($break-2){ 
+            header, div.social-container{ @include span-columns(4, $break-2); }
+            div.social-container{ @include omega; }
+        }
+        @include at-breakpoint($break-3){ 
+            div.social-container{ @include span-columns(7 omega, $break-3); }
+            header{ @include span-columns(7, $break-3); }
+            nav{
+                > a{ display: none; }
+                li{
+                    width: 25%;
+                    @include float-left;
+                }
+            }
+        }
+        @include at-breakpoint($break-4){ 
+            header, div.social-container{ @include span-columns(10, $break-4); }
+            div.social-container{ @include omega; }
+            nav{
+                li{
+                    @include reset-float;
+                    @include span-columns(5, $break-4);
+                    &:nth-child(4){ @include omega; }
+                }
+            }
+        }
+        @include at-breakpoint($break-5){ }
+        @include at-breakpoint($break-6){ }
+    }
+}

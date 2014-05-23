@@ -1,0 +1,11 @@
+@import "compass";
+@import "susy";
+
+section#about article.block, 
+section#other-about-us > .inner article.client,
+section.contact-form,
+section.other-contact-methods,
+section.consultants div article,
+#infobox{
+    @include opacity(1);
+}

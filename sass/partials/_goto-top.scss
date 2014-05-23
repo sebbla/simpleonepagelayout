@@ -1,0 +1,24 @@
+$default-width: 35px;
+#goto-top{
+    @include background($dark);
+    padding: 2px 10px 5px 10px;
+    position: fixed;
+    display: none;
+    bottom: 10px;
+    right: 0;
+    width: $default-width;
+    text-align: center;
+    a{ color: $white; }
+    span{
+        font-size: 2.2rem;
+        display: block;
+    }
+
+    @include at-breakpoint($break-1){ right: 15px; }
+    @include at-breakpoint($break-2){ right: 45px; }
+    @include at-breakpoint($break-3){ right: 55px; }
+    @include at-breakpoint($break-4){ right: 20px; }
+    @include at-breakpoint($break-5){ right: 50px; }
+    @include at-breakpoint($break-6){ right: 45px; }
+
+}
